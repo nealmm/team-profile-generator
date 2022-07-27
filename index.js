@@ -1,4 +1,7 @@
 const inquirer = require('inquirer')
+const Manager  = require('./lib/manager.js')
+const Engineer = require('./lib/engineer.js')
+const Intern   = require('./lib/intern.js')
 
 const managerQuestions = [{type: 'input',  name: 'name',   message: "Enter team manager's name"}
                          ,{type: 'number', name: 'id',     message: "Enter team manager's employee ID"}
@@ -22,16 +25,27 @@ function presentMenu() {
     .then(choice => {
         switch (choice.option) {
             case menuOptions[0]:
-                inquirer.prompt(engineerQuestions).then(() => presentMenu())
+                inquirer.prompt(engineerQuestions).then(answers => {
+                    employees.push(new Engineer(answers.name, answers.id, answers.email, answers.github))
+                    presentMenu()
+                })
                 break
             case menuOptions[1]:
-                inquirer.prompt(internQuestions).then(() => presentMenu())
+                inquirer.prompt(internQuestions).then(answers => {
+                    employees.push(new Intern(answers.name, answers.id, answers.email, answers.school))
+                    presentMenu()
+                })
                 break
             case menuOptions[2]:
-                console.log('Generating HTML...')
+                console.log(employees)
                 break
         }
     })
 }
 
-inquirer.prompt(managerQuestions).then(() => presentMenu())
+var employees = []
+
+inquirer.prompt(managerQuestions).then(answers => {
+    employees.push(new Manager(answers.name, answers.id, answers.email, answers.office))
+    presentMenu()
+})
