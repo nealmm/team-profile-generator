@@ -1,0 +1,19 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "prompts the user for information about team members in order to generate an HTML document displaying that information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nealmm/team-profile-generator.git"
+  },
+  "author": "Matt Neal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nealmm/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/nealmm/team-profile-generator#readme"
+}
