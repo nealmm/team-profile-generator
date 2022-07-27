@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/nealmm/team-profile-generator/issues"
   },
-  "homepage": "https://github.com/nealmm/team-profile-generator#readme"
+  "homepage": "https://github.com/nealmm/team-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }
