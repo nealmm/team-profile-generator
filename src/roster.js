@@ -28,7 +28,7 @@ function renderEmployee(employee) {
             specialDatum = `Office number: ${employee.getOfficeNumber()}`
             break
         case 'Engineer':
-            specialDatum = `GitHub: <a href="${employee.getGithub()}" target="_blank">${employee.getGithub()}</a>`
+            specialDatum = `GitHub: <a href="https://github.com/${employee.getGithub()}" target="_blank">${employee.getGithub()}</a>`
             break
         case 'Intern':
             specialDatum = `School: ${employee.getSchool()}`
